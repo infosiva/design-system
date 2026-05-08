@@ -1,0 +1,17 @@
+{
+  "name": "design-system",
+  "version": "1.0.0",
+  "description": "Design automation — layout picker, Stitch prompt generator, Claude design briefs",
+  "scripts": {
+    "pick": "npx ts-node pick-layout.ts",
+    "pipeline": "npx ts-node design-pipeline.ts",
+    "pipeline:write": "npx ts-node design-pipeline.ts --write",
+    "pipeline:one": "npx ts-node design-pipeline.ts",
+    "new": "npx ts-node idea-to-prod.ts",
+    "new:dry": "npx ts-node idea-to-prod.ts --dry-run"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
