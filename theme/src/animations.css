@@ -1,0 +1,44 @@
+/**
+ * Shared motion primitives — entrance, hover, stagger.
+ * Import into any project's globals.css: @import "../../design-system/theme/src/animations.css";
+ * Easing: cubic-bezier(0.23, 1, 0.32, 1) per portfolio animation standard.
+ */
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stagger-1 { animation: slideUp 0.35s cubic-bezier(.23,1,.32,1) both 0ms; }
+.stagger-2 { animation: slideUp 0.35s cubic-bezier(.23,1,.32,1) both 60ms; }
+.stagger-3 { animation: slideUp 0.35s cubic-bezier(.23,1,.32,1) both 120ms; }
+.stagger-4 { animation: slideUp 0.35s cubic-bezier(.23,1,.32,1) both 180ms; }
+
+@keyframes priceCardEnter {
+  from { opacity: 0; transform: scale(0.95) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.price-card-enter {
+  animation: priceCardEnter 0.3s cubic-bezier(.23,1,.32,1) both;
+  transition: transform 150ms cubic-bezier(.23,1,.32,1);
+}
+.price-card-enter:hover { transform: translateY(-2px); }
+
+.data-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: box-shadow 180ms ease-out, border-color 180ms ease-out;
+}
+.data-card:hover {
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent) 12%, transparent);
+  border-color: var(--border-strong);
+}
+
+.price-row { transition: background 120ms ease-out; }
+.price-row:hover { background: color-mix(in srgb, var(--accent) 6%, transparent) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger-1, .stagger-2, .stagger-3, .stagger-4, .price-card-enter {
+    animation: none;
+  }
+}

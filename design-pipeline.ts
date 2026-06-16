@@ -19,11 +19,9 @@ import * as fs from 'fs'
 import * as path from 'path'
 import * as https from 'https'
 import { PROJECTS, ProjectBrief } from './projects.config'
-import { pickArchetype } from './layout-archetypes'
-import { DESIGN_SYSTEMS, pickDesignSystem, pinterestQueries, generateDesignMd } from './pipeline-utils'
+import { pickArchetype, LayoutArchetype } from './layout-archetypes'
 
 // ─── getdesign.md catalogue ───────────────────────────────────────────────────
-// Now lives in pipeline-utils.ts — imported above
 // Sourced from getdesign.md — each entry is a real company design system
 const DESIGN_SYSTEMS: Record<string, {
   name: string
