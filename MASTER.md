@@ -4,6 +4,54 @@
 
 ---
 
+## Layout → Skills Map (MANDATORY — run these skills IN ORDER per layout type)
+
+| Template | Category | Projects | Skills to invoke (in order) |
+|----------|----------|----------|-----------------------------|
+| T1 Finance/Billing | Split light | invoicemint, trackwealth, billslash | `/design-shotgun` → `/frontend-design` (OD) → `/design-html` → `/ui-ux-pro-max` → `/21st-registry` → `/emil-design-eng` → `/animate` |
+| T2 Education/Quiz | Split light gamified | quizbites, tutiq, speakiq, kwizzo | `/design-shotgun` → `/frontend-design` (OD) → `/design-html` → `/ui-ux-pro-max` → `/21st-registry` → `/animate` → `/transitions-dev` |
+| T3 Productivity/SaaS | Split light clean | replydesk, draftcal, zerostaff, pdfideas | `/frontend-design` (OD) → `/shadcn-ui` (OD) → `/design-html` → `/ui-ux-pro-max` → `/21st-registry` → `/emil-design-eng` → `/animate` |
+| T4 AI Dev Tools | Split dark terminal | agenttrace, neuralos, rideflow, resumevault | `/design-shotgun` → `/interface-design` (OD) → `/design-html` → `/ui-ux-pro-max` → `/animate` → `/gsap-core` |
+| T5 Health/Wellness | Split light calm | myvitals, voicejournal, aicoachlab | `/frontend-design` (OD) → `/theme-factory` (OD) → `/design-html` → `/ui-ux-pro-max` → `/emil-design-eng` → `/animate` |
+| T6 Creative/Media | Split/Before-After | photorestore, pixelforge, clipforge, ai-social-content | `/design-shotgun` → `/frontend-design` (OD) → `/design-html` → `/animate` → `/transitions-dev` → `/emil-design-eng` |
+| T7 Travel/Local | Full-width warm | roamplan, anylocal, homecanvas | `/design-shotgun` → `/frontend-design` (OD) → `/design-html` → `/ui-ux-pro-max` → `/animate` → `/fal-generate` (hero image) |
+
+### Skills quick-ref (what each does in pipeline)
+| Skill | When | What it produces |
+|-------|------|-----------------|
+| `/design-shotgun` | Start of new project | 3 visual directions — pick furthest from portfolio |
+| `/frontend-design` (OD) | All light/marketing heroes | Production HTML+Tailwind split layout |
+| `/interface-design` (OD) | Dark/dashboard/SaaS apps | Sidebar+content, dashboard-style layouts |
+| `/shadcn-ui` (OD) | Any form/dialog/table/select | shadcn component wiring — never hand-roll |
+| `/theme-factory` (OD) | Any new project | Full CSS var token set (--background, --accent, --border, etc.) |
+| `/design-html` | All projects | Claude canvas generates production HTML+Tailwind from description |
+| `/ui-ux-pro-max` | All projects (mandatory) | Quality pass: spacing, contrast, hierarchy, motion, a11y |
+| `/21st-registry` | Common UI blocks | Pull polished buttons/cards/forms from 21st.dev — don't hand-roll |
+| `/emil-design-eng` | Polish pass | Micro-interactions, taste, invisible details |
+| `/animate` | All animated demos | Framer Motion, spring physics, easing |
+| `/transitions-dev` | Card/modal/state changes | 12 production patterns (card-resize, badge, text-swap, modal…) |
+| `/gsap-core` | Terminal/typewriter/timeline | GSAP for complex scroll/sequence animations |
+| `/fal-generate` | Travel/creative hero images | Wavespeed FLUX-schnell image generation |
+| `/fixing-accessibility` | Before every push | WCAG 4.5:1, focus states, aria-labels |
+
+### Animated right-panel types (one per layout)
+| Panel type | Used by | Animation |
+|-----------|---------|-----------|
+| Invoice generator | invoicemint, billslash | Fields type → status badge → confetti |
+| Quiz card flip | quizbites, kwizzo, tutiq | Cards slide in → option lights → score ticks |
+| AI reply drafter | replydesk, draftcal | Ticket arrives → shimmer → reply types word-by-word |
+| Terminal log stream | agenttrace, neuralos, rideflow | Logs scroll with timestamps, span bars |
+| Resume builder | resumevault | Fields populate → ATS score ring fills |
+| Health metrics | myvitals | Score ring 0→87% → metric cards count up |
+| Voice waveform | voicejournal | Bars pulse → transcript types → mood badge |
+| Coaching chat | aicoachlab | Question appears → answer types → feedback card |
+| Before/after slider | photorestore | Drag handle auto-sweeps left↔right |
+| Itinerary cards | roamplan | Day cards fly in for destination |
+| Business listings | anylocal | Cards appear: café, salon, gym + ratings |
+| Interior carousel | homecanvas | Room renders with Ken Burns zoom |
+
+---
+
 ## Global Style: Motion-Driven
 - **Animation duration:** 150–300ms UI, 400ms entrance, 600ms page transitions
 - **Easing (enter):** `cubic-bezier(0.23, 1, 0.32, 1)` — never `ease-in` for UI enter
@@ -88,8 +136,8 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in sr
 |---------|-----|---------|--------|--------|
 | tutiq | `#f0f9ff` | `#0284c7` | `#0ea5e9` | LOCKED |
 | quizbites | `#fefce8` | `#854d0e` | `#ca8a04` | LOCKED |
-| kwizzo | `#0f0f23` | `#a78bfa` | `#f59e0b` | LOCKED (dark) |
-| speakiq | `#fdf4ff` | `#7e22ce` | `#9333ea` | ASSIGNED |
+| kwizzo | `#101026` | `#3b82f6` | `#60a5fa` | LOCKED (dark navy + blue, verified vs. shipped globals.css 2026-08-04 — registry was stale) |
+| speakiq | `#f8fafc` | `#7c3aed` | `#9333ea` | ASSIGNED |
 
 **tutiq CSS tokens:**
 ```css
@@ -105,17 +153,17 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in sr
 --card: #ffffff; --border: #fef08a; --muted: #fef9c3;
 ```
 
-**kwizzo CSS tokens:**
+**kwizzo CSS tokens (corrected 2026-08-04 to match shipped app/globals.css):**
 ```css
---background: #0f0f23; --foreground: #f8fafc;
---accent: #f59e0b; --accent-2: #a78bfa;
---card: rgba(255,255,255,0.04); --border: rgba(255,255,255,0.08);
+--background: #101026; --foreground: #f1f5f9;
+--accent: #3b82f6; --accent-2: #60a5fa;
+--card: #181c3a; --border: #2b2f55; --muted: #14172f;
 ```
 
 **speakiq CSS tokens:**
 ```css
---background: #fdf4ff; --foreground: #0f172a;
---accent: #9333ea; --accent-2: #a855f7;
+--background: #f8fafc; --foreground: #0f172a;
+--accent: #7c3aed; --accent-2: #9333ea;
 --card: #ffffff; --border: #f3e8ff; --muted: #fae8ff;
 ```
 
@@ -125,7 +173,7 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in sr
 | Project | BG | Primary | Accent | Status |
 |---------|-----|---------|--------|--------|
 | invoicemint | `#f0fdf4` | `#1e3a5f` | `#059669` | ASSIGNED |
-| trackwealth | `#0b1420` | `#f59e0b` | `#fbbf24` | ASSIGNED (dark) |
+| trackwealth | `#0b1420` | `#059669` | `#10b981` | ASSIGNED (dark) — switched from amber 2026-08-04, no collision (zerostaff `#0b1120` distinct hex, dev-tools category) |
 | billslash | `#f8fafc` | `#1e293b` | `#0284c7` | RESERVED |
 
 **invoicemint CSS tokens (redesign — finance green):**
@@ -139,8 +187,8 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in sr
 **trackwealth CSS tokens:**
 ```css
 --background: #0b1420; --foreground: #f8fafc;
---accent: #f59e0b; --accent-2: #fbbf24;
---card: rgba(255,255,255,0.04); --border: rgba(251,191,36,0.15);
+--accent: #059669; --accent-2: #10b981;
+--card: rgba(255,255,255,0.04); --border: rgba(16,185,129,0.15);
 ```
 
 ---
@@ -206,12 +254,29 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in sr
 
 ---
 
+### JOBS / CAREERS
+| Project | BG | Primary | Accent | Status |
+|---------|-----|---------|--------|--------|
+| ai-jobs-portal | `#f8fafc` | `#0f172a` | `#2563eb` | LOCKED |
+
+**ai-jobs-portal CSS tokens:**
+```css
+--background: #f8fafc; --foreground: #0f172a;
+--accent: #2563eb; --accent-2: #1d4ed8;
+--card: #ffffff; --border: #e2e8f0; --muted: #f1f5f9;
+```
+Layout: T3 split light clean. Right panel: animated live job-matching demo (`JobPreviewCards.tsx`, real `/api/stats` data, staggered Framer Motion rows). Logo: animated SVG briefcase glyph (line-draw), `prefers-reduced-motion` safe.
+
+---
+
 ### DEV TOOLS / AI INFRA
 | Project | BG | Primary | Accent | Status |
 |---------|-----|---------|--------|--------|
 | agenttrace | `#0c111a` | `#22d3ee` | `#67e8f9` | ASSIGNED (dark) |
 | neuralos | `#080d1a` | `#6366f1` | `#818cf8` | LOCKED (dark) |
 | resumevault | `#0c0f1a` | `#7c3aed` | `#a78bfa` | ASSIGNED (dark) |
+| clawdbotai | `#0b1120` | `#7c3aed` | `#3b82f6` | COLLISION (accent dupes resumevault/pixelforge — documented brand in project CLAUDE.md, kept as-is, not reassigned) |
+| idea-agent | `#0b1120` | `#a855f7` | `#d8b4fe` | COLLISION (accent close to resumevault/pixelforge, no documented brand — needs `/design-shotgun` reassignment pass, not yet done) |
 
 **agenttrace CSS tokens:**
 ```css
@@ -336,10 +401,10 @@ Before assigning any new project theme, check these BANNED combos (already in us
 ```
 #f0f9ff + #0284c7  → tutiq ONLY
 #fefce8 + #ca8a04  → quizbites ONLY
-#0f0f23 + #f59e0b  → kwizzo ONLY
-#fdf4ff + #9333ea  → speakiq ONLY
+#101026 + #3b82f6  → kwizzo ONLY (accent #3b82f6 also used by rideflow on different bg #080f1a — bg+accent combo unique, not a collision)
+#f8fafc + #7c3aed  → speakiq ONLY (was #fdf4ff/#7e22ce in this doc, synced to live tokens 2026-08-04 — #f8fafc also used as base bg by other white-theme projects, but accent #7c3aed unique)
 #f0fdf4 + #059669  → invoicemint ONLY (roamplan uses same bg, diff accent #065f46)
-#0b1420 + #f59e0b  → trackwealth ONLY
+#0b1420 + #059669  → trackwealth ONLY (was amber #f59e0b, switched 2026-08-04)
 #f0fdfa + #0d9488  → myvitals ONLY
 #f5f0ff + #8b5cf6  → voicejournal ONLY
 #fff7ed + #ea580c  → aicoachlab ONLY
@@ -356,6 +421,9 @@ Before assigning any new project theme, check these BANNED combos (already in us
 #fffbf5 + #ea580c  → anylocal ONLY
 #080f1a + #3b82f6  → rideflow ONLY
 #f9fafb + #dc2626  → worldtrends ONLY
+#0b1120 + #14b8a6  → idea-agent ONLY
+#0b1120 + #06b6d4  → clawdbotai ONLY (bg doc'd as #0a0a0f in clawdbotai/CLAUDE.md — stale, actual globals.css uses #0b1120, needs doc sync)
+#f8fafc + #2563eb  → ai-jobs-portal ONLY (added 2026-09-18, retired from #020617+#6366f1)
 ```
 
 New project → pick a combo NOT in this list. Add to list when assigned.
