@@ -36,3 +36,6 @@ Fix cheap verified gaps in order: registry (3), chat/feedback (6), promo (8), th
 
 - [x] pick-design.mjs: scope text -> template + unique accents (2026-10-06)
 - [ ] Document-upload features (mi-pack, pdfideas, resumevault, ai-resume-screener, auditpilot) -> ai-core RAG; blocked on tenant admin key
+- [ ] flighttracker: NOT Next.js (Express `src/server.js` + static `public/` + Cloudflare worker). `lib/theme-loader.ts` (Edge Config) does not fit. Needs a client-side hub theme fetch (public endpoint) + AnimatedBg in plain JS; chat FAB, feedback, promo via hub also missing. Deferred, stack mismatch, do not fake.
+- [x] 2026-10-06 triage of chat/feedback gaps from layout imports: billslash has BillBot+Feedback (ok, matrix was wrong); taskflow has chat+feedback; studio-portfolio has chat, lacks Feedback; agent-lab has Feedback, lacks chat; qa-dashboard has neither (internal dashboard).
+- [ ] Internal tools (agent-lab, qa-dashboard, taskflow, hub): decide public-facing vs internal; if internal, record chat/promo exemption here. Public ones: studio-portfolio needs FeedbackWidget.
