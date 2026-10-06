@@ -265,6 +265,18 @@
     "complybuddy": {
       "bg": "#ffffff",
       "accent": "#4338ca"
+    },
+    "mandirates": {
+      "bg": "#fffdf6",
+      "accent": "#3f8f2a"
+    },
+    "matchly": {
+      "bg": "#0b1320",
+      "accent": "#34d399"
+    },
+    "mi-pack": {
+      "bg": "#f4f6f5",
+      "accent": "#166534"
     }
   },
   "sharedAllowed": [],
