@@ -1,0 +1,54 @@
+{
+  "_doc": "One entry per site. concept must be unique across sites unless hub logoShared. Fill via prompts/logo.md. status: none|directions|chosen|built",
+  "projects": {
+    "aicoachlab": {
+      "concept": "see project HANDOFF.md design-lock",
+      "files": [
+        "app/icon.svg"
+      ],
+      "status": "built"
+    },
+    "anylocal": {
+      "concept": "see project HANDOFF.md design-lock",
+      "files": [
+        "app/icon.svg"
+      ],
+      "status": "built"
+    },
+    "invoicemint": {
+      "concept": "see project HANDOFF.md design-lock",
+      "files": [
+        "app/icon.svg"
+      ],
+      "status": "built"
+    },
+    "neuralos": {
+      "concept": "see project HANDOFF.md design-lock",
+      "files": [
+        "app/icon.svg"
+      ],
+      "status": "built"
+    },
+    "pdfideas": {
+      "concept": "see project HANDOFF.md design-lock",
+      "files": [
+        "app/icon.svg"
+      ],
+      "status": "built"
+    },
+    "pixelforge": {
+      "concept": "see project HANDOFF.md design-lock",
+      "files": [
+        "app/icon.svg"
+      ],
+      "status": "built"
+    },
+    "replydesk": {
+      "concept": "see project HANDOFF.md design-lock",
+      "files": [
+        "app/icon.svg"
+      ],
+      "status": "built"
+    }
+  }
+}

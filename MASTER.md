@@ -424,6 +424,7 @@ Before assigning any new project theme, check these BANNED combos (already in us
 #0b1120 + #14b8a6  → idea-agent ONLY
 #0b1120 + #06b6d4  → clawdbotai ONLY (bg doc'd as #0a0a0f in clawdbotai/CLAUDE.md — stale, actual globals.css uses #0b1120, needs doc sync)
 #f8fafc + #2563eb  → ai-jobs-portal ONLY (added 2026-09-18, retired from #020617+#6366f1)
+#4f46e5 + #7c3aed on #f6f5ff  → autoaudit (money-ideas/ai-setup-smb) ONLY (added 2026-10-05, light indigo glass + animated aurora)
 ```
 
 New project → pick a combo NOT in this list. Add to list when assigned.

@@ -10,9 +10,9 @@ export interface LayoutArchetype {
   description: string
   bestFor: string[]          // category/mood combos that fit well
   sections: SectionDef[]
-  heroVariant: 'centered' | 'split' | 'fullbleed' | 'terminal' | 'chat' | 'magazine'
-  navStyle: 'floating' | 'sticky-top' | 'sidebar' | 'minimal'
-  cardStyle: 'grid' | 'masonry' | 'list' | 'carousel' | 'dashboard-panels'
+  heroVariant: 'centered' | 'split' | 'fullbleed' | 'terminal' | 'chat' | 'magazine' | 'bento' | 'tool-first' | 'story' | 'search' | 'map' | 'compare'
+  navStyle: 'floating' | 'sticky-top' | 'sidebar' | 'minimal' | 'command'
+  cardStyle: 'grid' | 'masonry' | 'list' | 'carousel' | 'dashboard-panels' | 'bento' | 'kanban' | 'timeline'
   spacing: 'tight' | 'comfortable' | 'spacious'
   stitchPrompt: string       // ready-to-paste into Google Stitch
   claudeDesignNotes: string  // notes for Claude when implementing
@@ -234,10 +234,108 @@ export const ARCHETYPES: LayoutArchetype[] = [
   },
 ]
 
+/* Archetypes 11-18 (added 2026-10-05): bento, tool-first, story, directory, board, map, docs, compare, gallery */
+const s = (name: string, component: string, required = true) => ({ name, required, component })
+
+const EXTRA_ARCHETYPES: LayoutArchetype[] = [
+  {
+    id: 'bento-showcase',
+    name: 'Bento Showcase',
+    description: 'Asymmetric tile grid where every tile is a live mini-demo. Strong for multi-feature products.',
+    bestFor: ['Productivity', 'Developer Tools', 'SaaS', 'Multi-feature', 'modern', 'polished'],
+    sections: [s('Hero', 'HeroBento'), s('BentoGrid', 'BentoGrid'), s('Proof', 'ProofStrip'), s('CTA', 'CtaBand')],
+    heroVariant: 'bento', navStyle: 'floating', cardStyle: 'bento', spacing: 'comfortable',
+    stitchPrompt: 'Bento grid landing: one 2x2 hero tile with live demo, four 1x1 feature tiles, one wide proof tile. 12px gaps, 20px radius, tile-local accents.',
+    claudeDesignNotes: 'CSS grid, grid-template-areas; tiles animate in with stagger from motion/presets. Each tile owns its background.',
+  },
+  {
+    id: 'tool-first-workbench',
+    name: 'Tool-First Workbench',
+    description: 'The product itself is the page: input and output panels above the fold, no marketing hero.',
+    bestFor: ['Utilities', 'Converters', 'Generators', 'AI Tools', 'instant', 'practical'],
+    sections: [s('ToolPanel', 'ToolWorkbench'), s('Examples', 'ExampleChips'), s('HowItWorks', 'ThreeSteps', false), s('FAQ', 'FaqAccordion', false)],
+    heroVariant: 'tool-first', navStyle: 'command', cardStyle: 'grid', spacing: 'tight',
+    stitchPrompt: 'Two-pane workbench: left input with example chips, right live result, slim top bar with command palette. No hero headline above the tool.',
+    claudeDesignNotes: 'Core action works with zero auth. Keyboard-first: Cmd+K, Enter to run. Result panel has skeleton, empty and error states.',
+  },
+  {
+    id: 'story-scroll',
+    name: 'Story Scroll',
+    description: 'Chaptered narrative with sticky visual that changes per section. For products explained as a journey.',
+    bestFor: ['Health', 'Wellness', 'Education', 'Learning', 'calm', 'guided'],
+    sections: [s('Hero', 'HeroStory'), s('Chapters', 'StickyChapters'), s('Outcome', 'OutcomeBand'), s('CTA', 'CtaBand')],
+    heroVariant: 'story', navStyle: 'minimal', cardStyle: 'timeline', spacing: 'spacious',
+    stitchPrompt: 'Scrollytelling: left sticky illustration swaps per chapter, right column text chapters, progress rail on the edge.',
+    claudeDesignNotes: 'IntersectionObserver or motion useScroll. Static first chapter visible at rest; reduced-motion shows all chapters stacked.',
+  },
+  {
+    id: 'directory-marketplace',
+    name: 'Directory & Marketplace',
+    description: 'Search-led listing page with filters, result cards and a detail drawer.',
+    bestFor: ['Marketplace', 'Directory', 'Jobs', 'Local', 'Listings', 'browse', 'discovery'],
+    sections: [s('SearchHero', 'HeroSearch'), s('Filters', 'FilterBar'), s('Results', 'ResultGrid'), s('Detail', 'DetailDrawer', false)],
+    heroVariant: 'search', navStyle: 'sticky-top', cardStyle: 'grid', spacing: 'comfortable',
+    stitchPrompt: 'Search bar hero with category chips, sticky filter row, 3-column result cards with image, price and rating, side drawer for detail.',
+    claudeDesignNotes: 'Real result data only (no placeholder listings). Filter state in URL. Empty-results state suggests relaxing a filter.',
+  },
+  {
+    id: 'kanban-board',
+    name: 'Board Workspace',
+    description: 'Columns of draggable cards; the board is the landing demo.',
+    bestFor: ['Project Management', 'CRM', 'Pipeline', 'Tracking', 'Operations', 'organised', 'workflow'],
+    sections: [s('Hero', 'HeroSplit'), s('BoardDemo', 'KanbanBoard'), s('Automations', 'RuleList', false), s('CTA', 'CtaBand')],
+    heroVariant: 'split', navStyle: 'sidebar', cardStyle: 'kanban', spacing: 'tight',
+    stitchPrompt: 'Left sidebar nav, top bar with search, 4 columns of cards with status chips and avatars, one card mid-drag with shadow.',
+    claudeDesignNotes: 'Columns scroll horizontally inside their own container, never the page. Drag has keyboard alternative.',
+  },
+  {
+    id: 'map-first',
+    name: 'Map First',
+    description: 'Full-bleed map or spatial canvas with floating panel. For location and route products.',
+    bestFor: ['Travel', 'Maps', 'Logistics', 'Local', 'Real Estate', 'Rides', 'spatial', 'explore'],
+    sections: [s('MapCanvas', 'HeroMap'), s('Panel', 'FloatingPanel'), s('Results', 'ResultList'), s('CTA', 'CtaBand', false)],
+    heroVariant: 'map', navStyle: 'floating', cardStyle: 'list', spacing: 'comfortable',
+    stitchPrompt: 'Full-viewport map, floating left panel with search and result list, bottom sheet on mobile.',
+    claudeDesignNotes: 'Free tiles only (OpenStreetMap/MapLibre). Panel becomes a bottom sheet under 640px.',
+  },
+  {
+    id: 'docs-knowledge',
+    name: 'Docs & Knowledge',
+    description: 'Sidebar tree plus reading column plus on-page outline. For reference-heavy products.',
+    bestFor: ['Documentation', 'Knowledge Base', 'API', 'Compliance', 'Reference', 'precise', 'trustworthy'],
+    sections: [s('Hero', 'HeroSearch'), s('Tree', 'SidebarTree'), s('Article', 'ReadingColumn'), s('Outline', 'OnPageOutline', false)],
+    heroVariant: 'search', navStyle: 'sidebar', cardStyle: 'list', spacing: 'comfortable',
+    stitchPrompt: 'Three columns: collapsible tree, 68ch article, right outline. Search with Cmd+K. Code blocks with copy.',
+    claudeDesignNotes: 'Measure 65-72ch. Serif or humanist body. Anchor links on headings. Mobile: tree in a drawer.',
+  },
+  {
+    id: 'compare-pricing',
+    name: 'Compare & Decide',
+    description: 'Side-by-side comparison as the hero. For tools where the choice is the product.',
+    bestFor: ['Finance', 'Insurance', 'Shopping', 'Comparison', 'Pricing', 'decision', 'analytical'],
+    sections: [s('Hero', 'HeroCompare'), s('Table', 'CompareTable'), s('Verdict', 'VerdictCard'), s('FAQ', 'FaqAccordion', false)],
+    heroVariant: 'compare', navStyle: 'sticky-top', cardStyle: 'grid', spacing: 'comfortable',
+    stitchPrompt: 'Two-option hero with toggles, sticky-header comparison table, highlighted winner column, verdict card with reasons.',
+    claudeDesignNotes: 'Table scrolls inside its own container on mobile with the first column sticky. Winner is stated in text, not colour alone.',
+  },
+  {
+    id: 'media-gallery',
+    name: 'Media Gallery',
+    description: 'Full-bleed visual wall with a carousel strip. For creative, video and image products.',
+    bestFor: ['Creative', 'Video', 'Image', 'Design', 'Music', 'Portfolio', 'visual', 'expressive'],
+    sections: [s('Hero', 'HeroFullbleed'), s('Strip', 'CarouselStrip'), s('Wall', 'MasonryWall'), s('CTA', 'CtaBand')],
+    heroVariant: 'fullbleed', navStyle: 'floating', cardStyle: 'carousel', spacing: 'spacious',
+    stitchPrompt: 'Full-bleed animated hero, snap-scroll carousel strip, masonry wall with hover reveal, floating pill nav.',
+    claudeDesignNotes: 'Generated or CSS visuals, no heavy video. Lazy-load below fold. Hover reveals need a focus equivalent.',
+  },
+]
+ARCHETYPES.push(...EXTRA_ARCHETYPES)
+
 /**
  * Match a project brief to the best layout archetype
  */
-export function pickArchetype(brief: import('./projects.config').ProjectBrief): LayoutArchetype {
+/** avoid = archetype ids already used by recent/sibling projects (-4 each, so variety wins close calls); seed = project id, breaks ties deterministically. */
+export function pickArchetype(brief: import('./projects.config').ProjectBrief, avoid: string[] = [], seed = ''): LayoutArchetype {
   const scores = ARCHETYPES.map(arch => {
     let score = 0
 
@@ -258,7 +356,9 @@ export function pickArchetype(brief: import('./projects.config').ProjectBrief): 
     if (brief.contentDensity === 'sparse' && arch.spacing === 'spacious') score += 2
     if (brief.contentDensity === 'medium' && arch.spacing === 'comfortable') score += 2
 
-    return { arch, score }
+    score -= 4 * avoid.filter(id => id === arch.id).length
+    const h = [...seed + arch.id].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7) % 100
+    return { arch, score: score + h / 1000 }
   })
 
   scores.sort((a, b) => b.score - a.score)

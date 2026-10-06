@@ -1,0 +1,280 @@
+{
+  "_doc": "Machine-readable default palettes. Source: MASTER.md Quick Collision Checker (migrated 2026-10-05). Rule: no two projects share an accent (OKLab dE < minAccentDeltaE) unless the hub sets ds_palette_shared for that site.",
+  "minAccentDeltaE": 0.04,
+  "projects": {
+    "tutiq": {
+      "bg": "#f0f9ff",
+      "accent": "#0284c7"
+    },
+    "quizbites": {
+      "bg": "#fefce8",
+      "accent": "#ca8a04"
+    },
+    "kwizzo": {
+      "bg": "#101026",
+      "accent": "#e8404f"
+    },
+    "speakiq": {
+      "bg": "#f8fafc",
+      "accent": "#0e9aa7"
+    },
+    "invoicemint": {
+      "bg": "#fffbeb",
+      "accent": "#a16207"
+    },
+    "trackwealth": {
+      "bg": "#0b1420",
+      "accent": "#0b6e4f"
+    },
+    "myvitals": {
+      "bg": "#f0fdfa",
+      "accent": "#0d9488"
+    },
+    "voicejournal": {
+      "bg": "#f5f0ff",
+      "accent": "#8b5cf6"
+    },
+    "aicoachlab": {
+      "bg": "#0c0714",
+      "accent": "#ec13d6"
+    },
+    "zerostaff": {
+      "bg": "#0b1120",
+      "accent": "#10b981"
+    },
+    "replydesk": {
+      "bg": "#0c0713",
+      "accent": "#d92691"
+    },
+    "draftcal": {
+      "bg": "#fffbf5",
+      "accent": "#d97706"
+    },
+    "pdfideas": {
+      "bg": "#f6faf1",
+      "accent": "#4ad926"
+    },
+    "agenttrace": {
+      "bg": "#0c111a",
+      "accent": "#22d3ee"
+    },
+    "neuralos": {
+      "bg": "#06110f",
+      "accent": "#42f0bc"
+    },
+    "resumevault": {
+      "bg": "#0c0f1a",
+      "accent": "#1d4ed8"
+    },
+    "photorestore": {
+      "bg": "#faf7f4",
+      "accent": "#c8894a"
+    },
+    "pixelforge": {
+      "bg": "#070a08",
+      "accent": "#a3e635"
+    },
+    "homecanvas": {
+      "bg": "#fffdf7",
+      "accent": "#78716c"
+    },
+    "anylocal": {
+      "bg": "#fffbf5",
+      "accent": "#f0bc42"
+    },
+    "rideflow": {
+      "bg": "#080f1a",
+      "accent": "#c6f432"
+    },
+    "worldtrends": {
+      "bg": "#f9fafb",
+      "accent": "#dc2626"
+    },
+    "idea-agent": {
+      "bg": "#0b1120",
+      "accent": "#14b8a6"
+    },
+    "clawdbotai": {
+      "bg": "#0b1120",
+      "accent": "#06b6d4"
+    },
+    "ai-jobs-portal": {
+      "bg": "#f8fafc",
+      "accent": "#2563eb"
+    },
+    "autoaudit": {
+      "bg": "#f6f5ff",
+      "accent": "#4f46e5"
+    },
+    "ninjapa": {
+      "bg": "#fff7ed",
+      "accent": "#c2410c"
+    },
+    "news-spin-agent": {
+      "bg": "#faf7f2",
+      "accent": "#9f1239"
+    },
+    "site-watchdog": {
+      "bg": "#070b14",
+      "accent": "#1e40af"
+    },
+    "coding-quiz-shorts": {
+      "bg": "#0a0f1f",
+      "accent": "#84cc16"
+    },
+    "daily-agent": {
+      "bg": "#f4f1ea",
+      "accent": "#0369a1"
+    },
+    "flighttracker": {
+      "bg": "#0a1628",
+      "accent": "#ff7a6b"
+    },
+    "growth-agent": {
+      "bg": "#fff7f5",
+      "accent": "#be123c"
+    },
+    "idea-factory": {
+      "bg": "#f6f8ee",
+      "accent": "#4d7c0f"
+    },
+    "monetization-agent": {
+      "bg": "#f6f2ec",
+      "accent": "#7c2d12"
+    },
+    "aigotitwrong": {
+      "bg": "#faf6ea",
+      "accent": "#fde047"
+    },
+    "business-agent": {
+      "bg": "#10131a",
+      "accent": "#f472b6"
+    },
+    "ai-toolkit": {
+      "bg": "#f7f5ef",
+      "accent": "#0f766e"
+    },
+    "auditpilot": {
+      "bg": "#f4f6fb",
+      "accent": "#1e3a8a"
+    },
+    "billslash": {
+      "bg": "#fff7f5",
+      "accent": "#be185d"
+    },
+    "bookingcall": {
+      "bg": "#0c1a2b",
+      "accent": "#facc15"
+    },
+    "parceliq": {
+      "bg": "#fbf6ee",
+      "accent": "#e2512d"
+    },
+    "pricedip": {
+      "bg": "#eef6ee",
+      "accent": "#16a34a"
+    },
+    "playsmart": {
+      "bg": "#fff5f8",
+      "accent": "#e11d74"
+    },
+    "outreach-crm": {
+      "bg": "#f2f8fd",
+      "accent": "#1d9bf0"
+    },
+    "vidrush": {
+      "bg": "#0a1220",
+      "accent": "#38bdf8"
+    },
+    "weekendai": {
+      "bg": "#fffbf5",
+      "accent": "#f97316"
+    },
+    "yt-portal": {
+      "bg": "#0e0e10",
+      "accent": "#ff5a36"
+    },
+    "protoforge": {
+      "bg": "#0c0a1f",
+      "accent": "#818cf8"
+    },
+    "qa-dashboard": {
+      "bg": "#06151a",
+      "accent": "#2dd4bf"
+    },
+    "quicktech": {
+      "bg": "#0d1117",
+      "accent": "#fb7185"
+    },
+    "quizbytesdaily": {
+      "bg": "#14091c",
+      "accent": "#d946ef"
+    },
+    "campaignforge": {
+      "bg": "#0b1020",
+      "accent": "#d26af0"
+    },
+    "agencyos": {
+      "bg": "#fdf8f1",
+      "accent": "#b45309"
+    },
+    "ai-resume-screener": {
+      "bg": "#f2f7f3",
+      "accent": "#15803d"
+    },
+    "ai-social-content": {
+      "bg": "#fff7fb",
+      "accent": "#c026d3"
+    },
+    "agent-lab": {
+      "bg": "#0b1424",
+      "accent": "#3b82f6"
+    },
+    "meetscribe": {
+      "bg": "#fbf7f5",
+      "accent": "#c93d82"
+    },
+    "nammatamil": {
+      "bg": "#faf3e3",
+      "accent": "#237a57"
+    },
+    "renewalpilot": {
+      "bg": "#fbf6f0",
+      "accent": "#9a3412"
+    },
+    "roamplan": {
+      "bg": "#ecfeff",
+      "accent": "#0e7490"
+    },
+    "clipforge-ai": {
+      "bg": "#f8fafc",
+      "accent": "#0f5f73"
+    },
+    "studio-portfolio": {
+      "bg": "#0c0f14",
+      "accent": "#a78bfa"
+    },
+    "taskflow": {
+      "bg": "#0b0710",
+      "accent": "#e879f9"
+    },
+    "firstline": {
+      "bg": "#fbf8f2",
+      "accent": "#854d0e"
+    },
+    "complybuddy": {
+      "bg": "#ffffff",
+      "accent": "#4338ca"
+    }
+  },
+  "sharedAllowed": [],
+  "_verify": "Hex values transcribed from MASTER.md 'Quick Collision Checker' on 2026-10-05 from compressed tool output: re-check against MASTER.md lines 399-430 before trusting.",
+  "mandirates": {
+    "bg": "#f7f3e8",
+    "accent": "#2e8b3d"
+  },
+  "matchly": {
+    "bg": "#0b1320",
+    "accent": "#34d399"
+  }
+}
