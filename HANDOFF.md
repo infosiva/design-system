@@ -33,3 +33,6 @@ Source: scratchpad audit.py over 59 app projects. Baseline: 48 wired to theme-lo
 Fix cheap verified gaps in order: registry (3), chat/feedback (6), promo (8), then design migration of ai-jobs-portal + flighttracker. Push each repo after its own build.
 
 - [ ] ai-core: api.prismlane.app is reachable (healthz 200, TS SDK built). Needs per-project tenant key (owner approval) in .env.shared + Vercel env; then wire answer()/query() for grounded chat and per-tenant limits in: mi-pack (UK property info, RAG over docs), mandirates, pdfideas, resumevault, ai-resume-screener. Others: state exemption.
+
+- [x] pick-design.mjs: scope text -> template + unique accents (2026-10-06)
+- [ ] Document-upload features (mi-pack, pdfideas, resumevault, ai-resume-screener, auditpilot) -> ai-core RAG; blocked on tenant admin key
