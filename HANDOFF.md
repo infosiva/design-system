@@ -39,3 +39,11 @@ Fix cheap verified gaps in order: registry (3), chat/feedback (6), promo (8), th
 - [ ] flighttracker: NOT Next.js (Express `src/server.js` + static `public/` + Cloudflare worker). `lib/theme-loader.ts` (Edge Config) does not fit. Needs a client-side hub theme fetch (public endpoint) + AnimatedBg in plain JS; chat FAB, feedback, promo via hub also missing. Deferred, stack mismatch, do not fake.
 - [x] 2026-10-06 triage of chat/feedback gaps from layout imports: billslash has BillBot+Feedback (ok, matrix was wrong); taskflow has chat+feedback; studio-portfolio has chat, lacks Feedback; agent-lab has Feedback, lacks chat; qa-dashboard has neither (internal dashboard).
 - [ ] Internal tools (agent-lab, qa-dashboard, taskflow, hub): decide public-facing vs internal; if internal, record chat/promo exemption here. Public ones: studio-portfolio needs FeedbackWidget.
+
+## 2026-10-06 progress (autonomous run)
+- Promo (hub access-codes, revocable, day/week): mi-pack, studio-portfolio, pricedip, auditpilot pushed. Portable client = `components/PromoCode.tsx` + `app/api/promo/route.ts` (copy from pricedip, change project id).
+- GA4 via hub: billslash, kwizzo, myvitals, worldtrends pushed (ai-jobs-portal earlier).
+- Chat FAB: agent-lab pushed (also fixed qdrant `search`->`query` build break).
+- BUG CLASS FOUND+FIXED: committed layouts importing untracked files (broke Vercel build while local pre-push passed). Fixed ai-resume-screener, anylocal, campaignforge, invoicemint, pricedip, studio-portfolio, agent-lab. Re-run the closure check after every layout commit.
+- Internal tools (qa-dashboard, taskflow, hub): promo = EXEMPT (no public users, owner-only); chat/feedback on qa-dashboard still open.
+- Still open: flighttracker (non-Next), ai-core tenant key (blocked), RAG for upload projects, FastAPI evaluation, remaining GA4 (rideflow, voicejournal, tutiq, zerostaff, hub), e2e-verify on live URLs.
