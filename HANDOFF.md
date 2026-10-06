@@ -47,3 +47,9 @@ Fix cheap verified gaps in order: registry (3), chat/feedback (6), promo (8), th
 - BUG CLASS FOUND+FIXED: committed layouts importing untracked files (broke Vercel build while local pre-push passed). Fixed ai-resume-screener, anylocal, campaignforge, invoicemint, pricedip, studio-portfolio, agent-lab. Re-run the closure check after every layout commit.
 - Internal tools (qa-dashboard, taskflow, hub): promo = EXEMPT (no public users, owner-only); chat/feedback on qa-dashboard still open.
 - Still open: flighttracker (non-Next), ai-core tenant key (blocked), RAG for upload projects, FastAPI evaluation, remaining GA4 (rideflow, voicejournal, tutiq, zerostaff, hub), e2e-verify on live URLs.
+
+## 2026-10-06 progress (cont.)
+- GA4 via hub theme (consent-denied default) now live in: billslash, kwizzo, myvitals, worldtrends, mi-pack, rideflow, voicejournal, tutiq, zerostaff. Remaining: hub (internal, exempt: no public traffic).
+- Untracked-import closure check (committed layout `@/` imports vs HEAD tree) clean across all Next projects.
+- qa-dashboard / taskflow: internal tools, chat-FAB + promo EXEMPT (no public users); taskflow keeps FeedbackWidget.
+- Open: flighttracker (non-Next: Express+static+CF worker) needs client-side hub theme/GA4/chat/feedback/promo; ai-core tenant key blocked (no admin key); e2e-verify not yet run on live URLs.
