@@ -8,3 +8,9 @@
 - parceliq/weekendai: fixed missing-file build breaks (pushed a7991d7, 898815f); verify deploy goes READY.
 - 2026-10-07: mi-pack and resumevault need an ai-core tenant key (https://api.prismlane.app) to move chat/upload/JD matching onto ai-core RAG. Owner-blocked; apps use direct free-first provider chains until then.
 - 2026-10-07 flighttracker: story-mode/.env.production was tracked (key NAME: NEXT_PUBLIC_API_URL only, public URL) and is in git history; untracked now, history not purged. Rotate keys in that file if it ever held more (in git history).
+
+## vidrush (added 2026-10-07)
+- Working tree holds an unfinished redesign by another agent (HANDOFF.md "IN PROGRESS, no commit") plus an untracked `.npmrc` containing a token. Review, move the token to an env var / gitignore `.npmrc`, then commit. Gate files (AnimatedBg, Logo, icon.svg, DESIGN.md) are already on disk.
+- homecanvas accent `#e11d48` collides with worldtrends: pick a new accent (`check-palettes.mjs --try`).
+- tutiq (own `lib/ai.ts`) and neuralos (vault notes) should move to ai-core once a tenant key exists.
+- flighttracker: chat/feedback/promo/theme need Worker-side implementation (static export cannot host app/api).
