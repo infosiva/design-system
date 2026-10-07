@@ -23,3 +23,4 @@
 - VPS tracker :3098 hangs; /t.js rewrite stalls P10 on homecanvas and likely other sites.
 - Console errors to inspect after redeploy: worldtrends (3), neuralos (2), quizbytes (1). invoicemint: 3 broken links.
 - Logo gap ("Match ly", "Quiz BytesDaily" at 375) in matchly and quizbytesdaily: verify live after redeploy.
+- e2e re-run 2026-10-07 (live, pre-redeploy): clawdbotai 7/10 (P1 console, P8 nav, P4 core action; stale deploy), complybuddy 9/10 (P1 2 console errors), pdfideas 8/10 (P1 4 console errors, P3 1 broken link), aicoachlab 10/10, campaignforge 10/10. Re-check after redeploy.
