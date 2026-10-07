@@ -14,3 +14,12 @@
 - homecanvas accent `#e11d48` collides with worldtrends: pick a new accent (`check-palettes.mjs --try`).
 - tutiq (own `lib/ai.ts`) and neuralos (vault notes) should move to ai-core once a tenant key exists.
 - flighttracker: chat/feedback/promo/theme need Worker-side implementation (static export cannot host app/api).
+
+## Live QA findings (added 2026-10-07)
+- Vercel CLI token invalid (VERCEL_TOKEN rejected): re-auth so domains/deploys can be listed.
+- Documented URL wrong/dead, give real URL: rideflow (rideflow.app -> atom.com), taskflow (parked), voicejournal (dead), zerostaff (no DNS), bookingcall (none documented), invoicemint (unconfirmed).
+- Live URL serves a DIFFERENT app than repo code: parceliq, photorestore, ai-resume-screener, clipforge-ai, studio-portfolio. Fix Vercel project/domain mapping (hub/lib/sites.ts entries likely wrong).
+- Stale live deploy (gate commit not live): matchly, replydesk (chat button img /meetbookprofilowe.png 404), neuralos, mandirates, clawdbotai, ai-toolkit and playsmart (only JS redirect to /lander).
+- VPS tracker :3098 hangs; /t.js rewrite stalls P10 on homecanvas and likely other sites.
+- Console errors to inspect after redeploy: worldtrends (3), neuralos (2), quizbytes (1). invoicemint: 3 broken links.
+- Logo gap ("Match ly", "Quiz BytesDaily" at 375) in matchly and quizbytesdaily: verify live after redeploy.
