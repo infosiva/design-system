@@ -1,62 +1,99 @@
-# HANDOFF — design-system rollout
-**Date:** 2026-10-05  **Status:** IN PROGRESS
-**Goal:** Shared design system, hub-customisable, unique accent+logo+layout per project, GA4 + usage logging via hub.
+# Design-system gap tracker (Production-Ready Gate)
+**Generated:** 2026-10-09 by `scripts/prod-ready-check.mjs` (heuristic grep; verify by hand)
 
-## Done
-- [x] 19 layout archetypes; pickArchetype(brief, avoid, seed) dynamic
-- [x] palette uniqueness (check-palettes, suggest-accents), hub 409 guard
-- [x] hub Themes tabs: Design (archetype, bg animation/speed, dials, flags, brief) + Tracking (GA4 id)
-- [x] theme-loader: analytics.ga4Id, buildGa4Snippet (consent denied by default), shared copy in theme/src
-- [x] agents done: speakiq, resumevault, rideflow, kwizzo
-## In progress
-- [ ] trackwealth, invoicemint agents
-- [ ] registry merge (palette-registry, logos/registry, rollout.json)
-- [ ] wave 2: aicoachlab anylocal neuralos pdfideas pixelforge replydesk + 12 no-tab-icon projects
-- [ ] gallery republish
-## Resume from here
-Collect trackwealth/invoicemint reports, merge registries, launch wave 2.
-## Known issues
-lightningcss binary missing (speakiq/resumevault build; reinstall node_modules), rideflow t.js script, kwizzo dashboard /pro link, stripe apiVersion tsc errors in kwizzo.
+| project | chatbot | feedback | analytics | promo | theme | notFound | handoff |
+|---|---|---|---|---|---|---|---|
+| agencyos | Y | Y | Y | Y | Y | Y | Y |
+| agent-lab | Y | Y | Y | Y | Y | - | Y |
+| ai-jobs-portal | Y | Y | Y | Y | Y | Y | Y |
+| ai-platform-template | Y | Y | Y | Y | Y | Y | Y |
+| ai-resume-screener | Y | Y | Y | Y | Y | Y | Y |
+| ai-social-content | Y | Y | Y | Y | Y | Y | Y |
+| ai-toolkit | Y | Y | Y | Y | Y | Y | Y |
+| aicoachlab | Y | Y | Y | Y | Y | Y | Y |
+| aigotitwrong | - | - | - | - | - | - | Y |
+| anylocal | Y | Y | Y | Y | Y | Y | Y |
+| auditpilot | Y | Y | Y | Y | Y | Y | Y |
+| billslash | Y | Y | Y | Y | Y | Y | Y |
+| bookingcall | Y | Y | Y | Y | Y | Y | Y |
+| business-agent | - | - | - | - | - | - | Y |
+| campaignforge | Y | Y | Y | Y | Y | Y | Y |
+| clawdbotai | Y | Y | Y | Y | Y | Y | Y |
+| clipforge-ai | Y | Y | Y | Y | Y | Y | Y |
+| coding-quiz-shorts | - | - | Y | - | Y | - | Y |
+| complybuddy | Y | Y | Y | Y | Y | Y | Y |
+| daily-agent | - | - | Y | - | Y | - | Y |
+| draftcal | Y | Y | Y | Y | Y | Y | Y |
+| firstline | Y | Y | Y | Y | Y | Y | Y |
+| flighttracker | Y | Y | Y | Y | Y | Y | Y |
+| growth-agent | - | - | Y | Y | Y | - | Y |
+| homecanvas | Y | Y | Y | Y | Y | Y | Y |
+| hub | Y | Y | Y | Y | Y | Y | - |
+| idea-agent | Y | Y | Y | Y | Y | Y | Y |
+| idea-factory | - | - | Y | Y | Y | - | Y |
+| invoicemint | Y | Y | Y | Y | Y | Y | Y |
+| kwizzo | Y | Y | Y | Y | Y | Y | - |
+| leadscout | - | - | - | - | - | - | Y |
+| mandirates | Y | Y | Y | Y | Y | Y | Y |
+| matchly | Y | Y | Y | Y | Y | Y | Y |
+| meetscribe | Y | Y | Y | Y | Y | Y | Y |
+| mi-pack | Y | Y | Y | Y | Y | Y | Y |
+| monetization-agent | - | - | Y | - | Y | - | Y |
+| myvitals | Y | Y | Y | Y | Y | Y | Y |
+| nammatamil | Y | Y | Y | Y | Y | Y | Y |
+| nammatamil-crawler | - | - | - | - | - | - | - |
+| neuralos | Y | Y | Y | Y | Y | Y | Y |
+| news-spin-agent | - | - | Y | - | Y | - | Y |
+| ninjapa | - | - | Y | - | Y | - | Y |
+| outreach-crm | Y | Y | Y | Y | Y | Y | Y |
+| parceliq | Y | Y | Y | Y | Y | Y | Y |
+| pdfideas | Y | Y | Y | Y | Y | Y | Y |
+| photorestore | Y | Y | Y | Y | Y | Y | Y |
+| pixelforge | Y | Y | Y | Y | Y | Y | Y |
+| playsmart | Y | Y | Y | Y | Y | Y | Y |
+| pricedip | Y | Y | Y | Y | Y | Y | Y |
+| prismlane-site | Y | Y | Y | - | - | - | Y |
+| protoforge | Y | Y | Y | Y | Y | Y | Y |
+| qa-dashboard | Y | Y | Y | - | Y | Y | Y |
+| quicktech | Y | Y | Y | Y | Y | Y | Y |
+| quizbites | Y | Y | Y | Y | Y | Y | Y |
+| quizbytesdaily | Y | Y | Y | Y | Y | Y | Y |
+| renewalpilot | Y | Y | Y | Y | Y | Y | Y |
+| replydesk | Y | Y | Y | Y | Y | Y | Y |
+| resumevault | Y | Y | Y | Y | Y | Y | Y |
+| rideflow | Y | Y | Y | Y | Y | Y | Y |
+| roamplan | Y | Y | Y | Y | Y | Y | Y |
+| speakiq | Y | Y | Y | Y | Y | Y | Y |
+| studio-portfolio | Y | Y | Y | Y | Y | Y | Y |
+| taskflow | Y | Y | Y | Y | Y | Y | Y |
+| trackwealth | Y | Y | Y | Y | Y | Y | Y |
+| tutiq | Y | Y | Y | Y | Y | Y | Y |
+| vidrush | Y | Y | Y | Y | Y | Y | Y |
+| voicejournal | Y | Y | Y | Y | Y | Y | Y |
+| weekendai | Y | Y | Y | Y | Y | Y | Y |
+| worldtrends | Y | Y | Y | Y | Y | Y | Y |
+| yt-portal | Y | Y | Y | Y | Y | Y | Y |
+| zerostaff | Y | Y | Y | Y | Y | Y | Y |
 
-## Production-readiness gap matrix (2026-10-06 audit, heuristic: verify each before fixing)
-Source: scratchpad audit.py over 59 app projects. Baseline: 48 wired to theme-loader.
-- [ ] Design migration missing: ai-jobs-portal, flighttracker (hub = admin, ai-platform-template = template: exempt)
-- [ ] Not in palette-registry: mandirates, matchly, mi-pack
-- [ ] Chat FAB missing: agent-lab, billslash, flighttracker, mi-pack, qa-dashboard
-- [ ] Feedback widget missing: flighttracker, mi-pack, qa-dashboard, studio-portfolio
-- [ ] Promo/trial-code (day/week access, section R) missing: agent-lab, auditpilot, flighttracker, mi-pack, pricedip, qa-dashboard, studio-portfolio, taskflow
-- [ ] GA4 via hub (buildGa4Snippet) missing in ~16 layouts (billslash draftcal kwizzo myvitals resumevault rideflow speakiq trackwealth tutiq voicejournal worldtrends zerostaff ...)
-- [ ] Usage/monitoring: no project shows posthog/sentry/usage-log by grep; confirm how hub usage logging is wired before claiming gap
-- [ ] ai-core adoption: grep finds NO project using ai-core/prismlane. Known blocker: ai-core not reachable from Vercel yet. State per-project exemption, do not fake.
-- [ ] AnimatedBg: 30 projects do not import it in layout (may use own bg); verify visually
-## Resume from here
-Fix cheap verified gaps in order: registry (3), chat/feedback (6), promo (8), then design migration of ai-jobs-portal + flighttracker. Push each repo after its own build.
 
-- [ ] ai-core: api.prismlane.app is reachable (healthz 200, TS SDK built). Needs per-project tenant key (owner approval) in .env.shared + Vercel env; then wire answer()/query() for grounded chat and per-tenant limits in: mi-pack (UK property info, RAG over docs), mandirates, pdfideas, resumevault, ai-resume-screener. Others: state exemption.
+## Gaps by check
+- **chatbot** missing (11): aigotitwrong, business-agent, coding-quiz-shorts, daily-agent, growth-agent, idea-factory, leadscout, monetization-agent, nammatamil-crawler, news-spin-agent, ninjapa
+- **feedback** missing (11): aigotitwrong, business-agent, coding-quiz-shorts, daily-agent, growth-agent, idea-factory, leadscout, monetization-agent, nammatamil-crawler, news-spin-agent, ninjapa
+- **analytics** missing (4): aigotitwrong, business-agent, leadscout, nammatamil-crawler
+- **promo** missing (11): aigotitwrong, business-agent, coding-quiz-shorts, daily-agent, leadscout, monetization-agent, nammatamil-crawler, news-spin-agent, ninjapa, prismlane-site, qa-dashboard
+- **theme** missing (5): aigotitwrong, business-agent, leadscout, nammatamil-crawler, prismlane-site
+- **notFound** missing (13): agent-lab, aigotitwrong, business-agent, coding-quiz-shorts, daily-agent, growth-agent, idea-factory, leadscout, monetization-agent, nammatamil-crawler, news-spin-agent, ninjapa, prismlane-site
+- **handoff** missing (3): hub, kwizzo, nammatamil-crawler
 
-- [x] pick-design.mjs: scope text -> template + unique accents (2026-10-06)
-- [ ] Document-upload features (mi-pack, pdfideas, resumevault, ai-resume-screener, auditpilot) -> ai-core RAG; blocked on tenant admin key
-- [ ] flighttracker: NOT Next.js (Express `src/server.js` + static `public/` + Cloudflare worker). `lib/theme-loader.ts` (Edge Config) does not fit. Needs a client-side hub theme fetch (public endpoint) + AnimatedBg in plain JS; chat FAB, feedback, promo via hub also missing. Deferred, stack mismatch, do not fake.
-- [x] 2026-10-06 triage of chat/feedback gaps from layout imports: billslash has BillBot+Feedback (ok, matrix was wrong); taskflow has chat+feedback; studio-portfolio has chat, lacks Feedback; agent-lab has Feedback, lacks chat; qa-dashboard has neither (internal dashboard).
-- [ ] Internal tools (agent-lab, qa-dashboard, taskflow, hub): decide public-facing vs internal; if internal, record chat/promo exemption here. Public ones: studio-portfolio needs FeedbackWidget.
+## Triage 2026-10-09 (manual review of the 11 flagged)
+- **Exempt, internal agent dashboards / static tools (no public users):** business-agent, daily-agent, growth-agent, idea-agent, idea-factory, monetization-agent, news-spin-agent, nammatamil-crawler, leadscout. Chatbot/feedback/promo/404 n/a; no public traffic.
+- **Exempt, Telegram bot + static page:** ninjapa (feedback through the bot; design lock + telemetry done 2026-10-06).
+- **Real gaps (public):** aigotitwrong, coding-quiz-shorts: static `public/index.html`, need chatbot + feedback + 404 + analytics (owner decision: are they live products?).
+- **Fixed 2026-10-09:** prismlane-site `app/not-found.tsx` added (uncommitted). prismlane-site is dark (#0b0e13 + teal) by design; hub theme wiring still open.
+- **Still open:** hub, kwizzo, nammatamil-crawler lack HANDOFF.md; agent-lab, qa-dashboard 404/promo.
 
-## 2026-10-06 progress (autonomous run)
-- Promo (hub access-codes, revocable, day/week): mi-pack, studio-portfolio, pricedip, auditpilot pushed. Portable client = `components/PromoCode.tsx` + `app/api/promo/route.ts` (copy from pricedip, change project id).
-- GA4 via hub: billslash, kwizzo, myvitals, worldtrends pushed (ai-jobs-portal earlier).
-- Chat FAB: agent-lab pushed (also fixed qdrant `search`->`query` build break).
-- BUG CLASS FOUND+FIXED: committed layouts importing untracked files (broke Vercel build while local pre-push passed). Fixed ai-resume-screener, anylocal, campaignforge, invoicemint, pricedip, studio-portfolio, agent-lab. Re-run the closure check after every layout commit.
-- Internal tools (qa-dashboard, taskflow, hub): promo = EXEMPT (no public users, owner-only); chat/feedback on qa-dashboard still open.
-- Still open: flighttracker (non-Next), ai-core tenant key (blocked), RAG for upload projects, FastAPI evaluation, remaining GA4 (rideflow, voicejournal, tutiq, zerostaff, hub), e2e-verify on live URLs.
-
-## 2026-10-06 progress (cont.)
-- GA4 via hub theme (consent-denied default) now live in: billslash, kwizzo, myvitals, worldtrends, mi-pack, rideflow, voicejournal, tutiq, zerostaff. Remaining: hub (internal, exempt: no public traffic).
-- Untracked-import closure check (committed layout `@/` imports vs HEAD tree) clean across all Next projects.
-- qa-dashboard / taskflow: internal tools, chat-FAB + promo EXEMPT (no public users); taskflow keeps FeedbackWidget.
-- Open: flighttracker (non-Next: Express+static+CF worker) needs client-side hub theme/GA4/chat/feedback/promo; ai-core tenant key blocked (no admin key); e2e-verify not yet run on live URLs.
-- **FINDING (e2e-verify 2026-10-06):** myvitals live P1 FAIL: 2 console errors. Cause: shared `useGate`/`useMagicAuth` default to `http://31.97.56.148:3110` (mixed content from https + the auth server times out from here). Same default is in anylocal, complybuddy, draftcal, hub, kwizzo, myvitals, nammatamil, pixelforge, quizbites, resumevault, roamplan, shared-ui, trackwealth, tutiq, weekendai, worldtrends. Needs an HTTPS endpoint (tunnel/Caddy on VPS) + `NEXT_PUBLIC_AUTH_API_URL` in Vercel: owner infra action, NOT faked. kwizzo landing has 0 console errors.
-- flighttracker: already has hub theme-public, GA4/consent, chat, feedback. Promo worker now validates hub access codes first (revocable), env codes fallback; pushed 5a7ea7b. `wrangler deploy` NOT run (outward action, owner to approve).
-
-## 2026-10-06 (cont. 2): mixed-content fix
-- `/auth-api` same-origin proxy (hook default + `next.config` rewrite; hooks also ignore a stale `http://31.97.56.148` env) pushed to: draftcal, worldtrends, nammatamil, quizbites, myvitals, kwizzo, trackwealth, roamplan, weekendai, anylocal, tutiq, resumevault. Live-verified: myvitals clean, kwizzo e2e exit 0.
-- BLOCKED (owner): draftcal.app + worldtrends.today still serve old builds (no GitHub deployments on repo; `vercel` CLI token invalid) -> relink/redeploy in Vercel. worldtrends also loads `http://31.97.56.148:3098/t.js` (tracker, not in repo: check hub/Edge Config script URL).
-- BLOCKED: complybuddy local commit dea1877 (auth fix) unpushed: pre-push Turbopack build fails on lucide-react (`buildLucideIconForReact.mjs`), pre-existing. Needs `next build --webpack` hook or lucide bump.
+## 2026-10-09 design-record sweep
+- ai-jobs-portal, invoicemint, mi-pack: design pass + animated scope already recorded. ai-jobs-portal still TODO: impeccable critique, /review-animations.
+- kwizzo: HANDOFF.md added (design lock + animated scope).
+- nammatamil-crawler: internal dashboard, design N/A, noted in DESIGN.md.
+- aigotitwrong, coding-quiz-shorts: have prod-gate-2026-10-07 records (earlier 'real gap' call was wrong).
