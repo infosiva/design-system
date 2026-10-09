@@ -97,3 +97,5 @@
 - kwizzo: HANDOFF.md added (design lock + animated scope).
 - nammatamil-crawler: internal dashboard, design N/A, noted in DESIGN.md.
 - aigotitwrong, coding-quiz-shorts: have prod-gate-2026-10-07 records (earlier 'real gap' call was wrong).
+
+- 2026-10-09: ANIMATED SCOPE records added to 13 projects lacking one (kwizzo, trackwealth, agenttrace, ninjapa, news-spin-agent, site-watchdog, coding-quiz-shorts, daily-agent, growth-agent, idea-factory, monetization-agent, aigotitwrong, business-agent). Scan: 71 registered, `autoaudit` has no dir. `/review-animations` not run on any (owner TODO).
