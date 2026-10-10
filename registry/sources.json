@@ -1,0 +1,11 @@
+{
+ "_doc": "Where discover.mjs looks for new skills/plugins/tools. Add a source = append an entry, no code. Free sources only.",
+ "github_queries": [
+  "topic:claude-skills design",
+  "topic:agent-skills ui",
+  "topic:design-system-tokens",
+  "topic:claude-code-plugin frontend"
+ ],
+ "min_stars": 100,
+ "pushed_within_days": 180
+}

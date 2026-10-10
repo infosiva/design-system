@@ -386,3 +386,17 @@ pre { overflow-x: auto; white-space: pre-wrap; word-break: break-word; }
 @media (prefers-color-scheme: dark) {
   /* Only applies if project uses system-dark. Manual dark-bg projects override above. */
 }
+
+/* Design dials (hub theme_<siteId>.design.dials overrides via data-* on <html>).
+   variance = layout/asymmetry, motion = animation intensity, density = spacing tightness. */
+:root {
+  --dial-variance: 6;
+  --dial-motion: 5;
+  --dial-density: 7;
+  --dur-fast: calc(220ms - var(--dial-motion) * 10ms);
+  --dur-base: calc(420ms - var(--dial-motion) * 20ms);
+  --space-unit: calc(1.25rem - var(--dial-density) * 0.08rem);
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --dial-motion: 0; --dur-fast: 0ms; --dur-base: 0ms; }
+}

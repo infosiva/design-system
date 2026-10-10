@@ -1,0 +1,116 @@
+{
+ "candidates": [
+  {
+   "name": "SnailSploit/Claude-Red",
+   "url": "https://github.com/SnailSploit/Claude-Red",
+   "stars": 7380,
+   "license": "MIT",
+   "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+   "found": "2026-10-10"
+  },
+  {
+   "name": "kaankiziltug/logo-design-skill",
+   "url": "https://github.com/kaankiziltug/logo-design-skill",
+   "stars": 2480,
+   "license": "MIT",
+   "description": "A comprehensive logo-design skill for Claude, Gemini CLI, Codex and other AI agents: principles, process, SVG craft, testing tools and a 1,400+ logo reference library.",
+   "found": "2026-10-10"
+  },
+  {
+   "name": "zanwei/design-dna",
+   "url": "https://github.com/zanwei/design-dna",
+   "stars": 1930,
+   "license": "MIT",
+   "description": "Turn reference UIs (images, screenshots, URLs) into quantified Design DNA JSON—tokens, qualitative style, visual effects—then generate matching UI from your content.",
+   "found": "2026-10-10"
+  },
+  {
+   "name": "plugin87/ux-ui-agent-skills",
+   "url": "https://github.com/plugin87/ux-ui-agent-skills",
+   "stars": 1565,
+   "license": "MIT",
+   "description": "Turn Claude into a senior design architect: DTCG tokens, 52 components, WCAG 2.2 AA-AAA, 138 design systems, any-framework code, and 50 objective gates that fail the build instead of faking success.",
+   "found": "2026-10-10"
+  },
+  {
+   "name": "oil-oil/oil-ui",
+   "url": "https://github.com/oil-oil/oil-ui",
+   "stars": 1166,
+   "license": "MIT",
+   "description": "Push AI UI design to its limits: explore distinct directions, compare them side by side, and refine against real screenshots. 把 AI 的 UI 设计能力推到极限。",
+   "found": "2026-10-10"
+  },
+  {
+   "name": "htmlstreamofficial/preline",
+   "url": "https://github.com/htmlstreamofficial/preline",
+   "stars": 6480,
+   "license": "NOASSERTION",
+   "description": "Preline UI is an open-source set of prebuilt UI components based on the utility-first Tailwind CSS framework.",
+   "found": "2026-10-10"
+  },
+  {
+   "name": "miqdadbadjuber/anti-slop",
+   "url": "https://github.com/miqdadbadjuber/anti-slop",
+   "stars": 5653,
+   "license": "MIT",
+   "description": "Rules for an AI coding agent to filter out generic AI-generated UI designs, text, and code.",
+   "found": "2026-10-10"
+  },
+  {
+   "name": "JimLiu/baoyu-design",
+   "url": "https://github.com/JimLiu/baoyu-design",
+   "stars": 4277,
+   "license": "MIT",
+   "description": "Run Claude Design locally as an Agent Skill — Cursor, Claude Code & more. Produce polished UI mockups, prototypes, decks & wireframes as self-contained HTML, without claude.ai/design. Best with Opus or Claude.",
+   "found": "2026-10-10"
+  },
+  {
+   "name": "LottieFiles/motion-design-skill",
+   "url": "https://github.com/LottieFiles/motion-design-skill",
+   "stars": 2052,
+   "license": "MIT",
+   "description": "Universal motion design principles for AI agents — timing, easing, choreography, and Disney animation principles adapted for UI",
+   "found": "2026-10-10"
+  },
+  {
+   "name": "bergside/typeui",
+   "url": "https://github.com/bergside/typeui",
+   "stars": 2026,
+   "license": "NOASSERTION",
+   "description": "Build better UI with AI",
+   "found": "2026-10-10"
+  },
+  {
+   "name": "nateherkai/scroll-craft",
+   "url": "https://github.com/nateherkai/scroll-craft",
+   "stars": 3017,
+   "license": "MIT",
+   "description": "An agent skill for building premium, immersive, scroll-driven websites. Works with Codex, Claude Code, and other coding agents. Also available as a Claude Code plugin.",
+   "found": "2026-10-10"
+  },
+  {
+   "name": "Adityaraj0421/naksha-studio",
+   "url": "https://github.com/Adityaraj0421/naksha-studio",
+   "stars": 321,
+   "license": "MIT",
+   "description": "A virtual design team for Claude Code, Cursor, Windsurf, Gemini CLI, and Copilot — 26 roles, 62 commands, 15,000+ lines of expert design knowledge. Your agency's design brain, inside your terminal.",
+   "found": "2026-10-10"
+  },
+  {
+   "name": "Mertcikla/tld",
+   "url": "https://github.com/Mertcikla/tld",
+   "stars": 288,
+   "license": "Apache-2.0",
+   "description": "Software architecture diagramming tool. Includes a modern easy to use Frontend + Backend + CLI to enable managing diagrams from the shell or in CI.",
+   "found": "2026-10-10"
+  },
+  {
+   "name": "HermeticOrmus/LibreUIUX-Claude-Code",
+   "url": "https://github.com/HermeticOrmus/LibreUIUX-Claude-Code",
+   "stars": 112,
+   "license": "MIT",
+   "description": "UI/UX system for Claude Code: 71 plugins, 93 agents, 74 skills. Design mastery, archetypal design, accessibility, and frontend workflows in one validated plugin marketplace.",
+   "found": "2026-10-10"
+  }
+ ]
+}

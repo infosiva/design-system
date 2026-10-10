@@ -1,0 +1,35 @@
+{
+ "_doc": "Hub design.fontPair = id. Add a pair = append. Fonts must be free (Google Fonts).",
+ "entries": [
+  {
+   "id": "grotesk-plex",
+   "display": "Familjen Grotesk",
+   "body": "IBM Plex Sans",
+   "mono": "IBM Plex Mono"
+  },
+  {
+   "id": "serif-editorial",
+   "display": "Fraunces",
+   "body": "Inter",
+   "mono": "JetBrains Mono"
+  },
+  {
+   "id": "rounded-friendly",
+   "display": "Nunito",
+   "body": "Nunito Sans",
+   "mono": "IBM Plex Mono"
+  },
+  {
+   "id": "mono-tech",
+   "display": "Space Grotesk",
+   "body": "DM Sans",
+   "mono": "JetBrains Mono"
+  },
+  {
+   "id": "humanist",
+   "display": "Plus Jakarta Sans",
+   "body": "Source Sans 3",
+   "mono": "IBM Plex Mono"
+  }
+ ]
+}

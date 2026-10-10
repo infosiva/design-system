@@ -356,7 +356,7 @@ export function pickArchetype(brief: import('./projects.config').ProjectBrief, a
     if (brief.contentDensity === 'sparse' && arch.spacing === 'spacious') score += 2
     if (brief.contentDensity === 'medium' && arch.spacing === 'comfortable') score += 2
 
-    score -= 4 * avoid.filter(id => id === arch.id).length
+    score -= 100 * avoid.filter(id => id === arch.id).length
     const h = [...seed + arch.id].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7) % 100
     return { arch, score: score + h / 1000 }
   })

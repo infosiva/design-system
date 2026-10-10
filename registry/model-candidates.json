@@ -1,0 +1,118 @@
+{
+ "candidates": [
+  {
+   "id": "inclusionai/ling-3.1-flash",
+   "provider": "openrouter",
+   "context": 262144,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "apodex/apodex-1.1-mini:free",
+   "provider": "openrouter",
+   "context": 262144,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "dots-studio/dots-3-note-preview:free",
+   "provider": "openrouter",
+   "context": 512000,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "liquid/lfm-2.5-2.6b:free",
+   "provider": "openrouter",
+   "context": 65536,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "nvidia/nemotron-3.5-lightning:free",
+   "provider": "openrouter",
+   "context": 1000000,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "thinkingmachines/inkling-small:free",
+   "provider": "openrouter",
+   "context": 1048576,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "poolside/laguna-s-2.1:free",
+   "provider": "openrouter",
+   "context": 262144,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "thinkingmachines/inkling:free",
+   "provider": "openrouter",
+   "context": 1048576,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "poolside/laguna-xs-2.1:free",
+   "provider": "openrouter",
+   "context": 262144,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "cohere/north-mini-code:free",
+   "provider": "openrouter",
+   "context": 256000,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "nvidia/nemotron-3.5-content-safety:free",
+   "provider": "openrouter",
+   "context": 128000,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "provider": "openrouter",
+   "context": 1000000,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+   "provider": "openrouter",
+   "context": 256000,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "google/gemma-4-26b-a4b-it:free",
+   "provider": "openrouter",
+   "context": 262144,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "google/gemma-4-31b-it:free",
+   "provider": "openrouter",
+   "context": 262144,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "google/lyria-3-pro-preview",
+   "provider": "openrouter",
+   "context": 1048576,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "google/lyria-3-clip-preview",
+   "provider": "openrouter",
+   "context": 1048576,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "nvidia/nemotron-3-super-120b-a12b:free",
+   "provider": "openrouter",
+   "context": 262144,
+   "found": "2026-10-10"
+  },
+  {
+   "id": "openrouter/free",
+   "provider": "openrouter",
+   "context": 200000,
+   "found": "2026-10-10"
+  }
+ ]
+}

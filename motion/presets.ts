@@ -1,5 +1,7 @@
-// Shared motion presets for `motion/react`. Copy-source: import from here or copy into the project.
-import type { Transition, Variants } from "motion/react";
+// Shared motion presets for `framer-motion`. Copy-source: import from here or copy into the project.
+// Use only for springs/gestures/layout/sequences; simple fades and hovers stay CSS.
+// Pair with `useReducedMotion()` + `reduced()` below.
+import type { Transition, Variants } from "framer-motion";
 
 export const spring = {
   snappy: { type: "spring", stiffness: 500, damping: 32 } as Transition,

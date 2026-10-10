@@ -1,0 +1,41 @@
+{
+ "_doc": "Hub design.template = id: a page-section recipe on top of a layout. Add = append.",
+ "entries": [
+  {
+   "id": "landing-demo-first",
+   "sections": [
+    "hero-demo",
+    "tier-strip",
+    "how-it-works",
+    "proof",
+    "faq"
+   ]
+  },
+  {
+   "id": "app-shell",
+   "sections": [
+    "sidebar",
+    "workspace",
+    "example-dashboard"
+   ]
+  },
+  {
+   "id": "editorial",
+   "sections": [
+    "hero-story",
+    "feature-list",
+    "proof",
+    "faq"
+   ]
+  },
+  {
+   "id": "pricing-compare",
+   "sections": [
+    "hero",
+    "tier-strip",
+    "compare-table",
+    "faq"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+  "_doc": "Add a design skill or best practice = append an entry. status: active|trial|retired. prompts/modernise.md and the public gallery read this.",
+  "entries": [
+    {"id":"ds-source","kind":"skill","status":"active","use":"first, source of truth","added":"2026-10-05"},
+    {"id":"impeccable","kind":"skill","status":"active","use":"shape, polish, critique","added":"2026-10-07"},
+    {"id":"ui-ux-pro-max","kind":"skill","status":"active","use":"palette, style, UX rules","added":"2026-10-05"},
+    {"id":"taste-skill","kind":"skill","status":"active","use":"anti-slop dials","added":"2026-10-05"},
+    {"id":"frontend-design","kind":"skill","status":"active","use":"distinct production UI","added":"2026-10-07"},
+    {"id":"emil-design-eng","kind":"skill","status":"active","use":"interaction polish","added":"2026-10-05"},
+    {"id":"animate","kind":"skill","status":"active","use":"purposeful motion, reduced-motion","added":"2026-10-05"},
+    {"id":"fixing-accessibility","kind":"skill","status":"active","use":"WCAG AA","added":"2026-10-05"},
+    {"id":"apple-audit","kind":"skill","status":"active","use":"post-change scoring","added":"2026-10-09"},
+    {"id":"contrast-gate","kind":"practice","status":"active","use":"0 text nodes <4.5:1 at 375+1280","added":"2026-10-10"},
+    {"id":"layout-variance","kind":"practice","status":"active","use":"no two projects share an archetype (scripts/check-layouts.ts)","added":"2026-10-10"},
+    {"id":"hub-driven-tokens","kind":"practice","status":"trial","use":"sites read design from hub at runtime, no code change","added":"2026-10-10"}
+  ]
+}

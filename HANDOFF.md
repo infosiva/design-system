@@ -1,101 +1,46 @@
-# Design-system gap tracker (Production-Ready Gate)
-**Generated:** 2026-10-09 by `scripts/prod-ready-check.mjs` (heuristic grep; verify by hand)
+# HANDOFF — design system + hub customise + model router, then tutiq as trial
+**Date:** 2026-10-10  **Status:** IN PROGRESS
+**Goal:** Hub can change layout/theme/dials and model routing per site (or common) with no code deploy; hub page searches/installs models, tools, plugins; tutiq consumes it as the trial.
 
-| project | chatbot | feedback | analytics | promo | theme | notFound | handoff |
-|---|---|---|---|---|---|---|---|
-| agencyos | Y | Y | Y | Y | Y | Y | Y |
-| agent-lab | Y | Y | Y | Y | Y | - | Y |
-| ai-jobs-portal | Y | Y | Y | Y | Y | Y | Y |
-| ai-platform-template | Y | Y | Y | Y | Y | Y | Y |
-| ai-resume-screener | Y | Y | Y | Y | Y | Y | Y |
-| ai-social-content | Y | Y | Y | Y | Y | Y | Y |
-| ai-toolkit | Y | Y | Y | Y | Y | Y | Y |
-| aicoachlab | Y | Y | Y | Y | Y | Y | Y |
-| aigotitwrong | - | - | - | - | - | - | Y |
-| anylocal | Y | Y | Y | Y | Y | Y | Y |
-| auditpilot | Y | Y | Y | Y | Y | Y | Y |
-| billslash | Y | Y | Y | Y | Y | Y | Y |
-| bookingcall | Y | Y | Y | Y | Y | Y | Y |
-| business-agent | - | - | - | - | - | - | Y |
-| campaignforge | Y | Y | Y | Y | Y | Y | Y |
-| clawdbotai | Y | Y | Y | Y | Y | Y | Y |
-| clipforge-ai | Y | Y | Y | Y | Y | Y | Y |
-| coding-quiz-shorts | - | - | Y | - | Y | - | Y |
-| complybuddy | Y | Y | Y | Y | Y | Y | Y |
-| daily-agent | - | - | Y | - | Y | - | Y |
-| draftcal | Y | Y | Y | Y | Y | Y | Y |
-| firstline | Y | Y | Y | Y | Y | Y | Y |
-| flighttracker | Y | Y | Y | Y | Y | Y | Y |
-| growth-agent | - | - | Y | Y | Y | - | Y |
-| homecanvas | Y | Y | Y | Y | Y | Y | Y |
-| hub | Y | Y | Y | Y | Y | Y | - |
-| idea-agent | Y | Y | Y | Y | Y | Y | Y |
-| idea-factory | - | - | Y | Y | Y | - | Y |
-| invoicemint | Y | Y | Y | Y | Y | Y | Y |
-| kwizzo | Y | Y | Y | Y | Y | Y | - |
-| leadscout | - | - | - | - | - | - | Y |
-| mandirates | Y | Y | Y | Y | Y | Y | Y |
-| matchly | Y | Y | Y | Y | Y | Y | Y |
-| meetscribe | Y | Y | Y | Y | Y | Y | Y |
-| mi-pack | Y | Y | Y | Y | Y | Y | Y |
-| monetization-agent | - | - | Y | - | Y | - | Y |
-| myvitals | Y | Y | Y | Y | Y | Y | Y |
-| nammatamil | Y | Y | Y | Y | Y | Y | Y |
-| nammatamil-crawler | - | - | - | - | - | - | - |
-| neuralos | Y | Y | Y | Y | Y | Y | Y |
-| news-spin-agent | - | - | Y | - | Y | - | Y |
-| ninjapa | - | - | Y | - | Y | - | Y |
-| outreach-crm | Y | Y | Y | Y | Y | Y | Y |
-| parceliq | Y | Y | Y | Y | Y | Y | Y |
-| pdfideas | Y | Y | Y | Y | Y | Y | Y |
-| photorestore | Y | Y | Y | Y | Y | Y | Y |
-| pixelforge | Y | Y | Y | Y | Y | Y | Y |
-| playsmart | Y | Y | Y | Y | Y | Y | Y |
-| pricedip | Y | Y | Y | Y | Y | Y | Y |
-| prismlane-site | Y | Y | Y | - | - | - | Y |
-| protoforge | Y | Y | Y | Y | Y | Y | Y |
-| qa-dashboard | Y | Y | Y | - | Y | Y | Y |
-| quicktech | Y | Y | Y | Y | Y | Y | Y |
-| quizbites | Y | Y | Y | Y | Y | Y | Y |
-| quizbytesdaily | Y | Y | Y | Y | Y | Y | Y |
-| renewalpilot | Y | Y | Y | Y | Y | Y | Y |
-| replydesk | Y | Y | Y | Y | Y | Y | Y |
-| resumevault | Y | Y | Y | Y | Y | Y | Y |
-| rideflow | Y | Y | Y | Y | Y | Y | Y |
-| roamplan | Y | Y | Y | Y | Y | Y | Y |
-| speakiq | Y | Y | Y | Y | Y | Y | Y |
-| studio-portfolio | Y | Y | Y | Y | Y | Y | Y |
-| taskflow | Y | Y | Y | Y | Y | Y | Y |
-| trackwealth | Y | Y | Y | Y | Y | Y | Y |
-| tutiq | Y | Y | Y | Y | Y | Y | Y |
-| vidrush | Y | Y | Y | Y | Y | Y | Y |
-| voicejournal | Y | Y | Y | Y | Y | Y | Y |
-| weekendai | Y | Y | Y | Y | Y | Y | Y |
-| worldtrends | Y | Y | Y | Y | Y | Y | Y |
-| yt-portal | Y | Y | Y | Y | Y | Y | Y |
-| zerostaff | Y | Y | Y | Y | Y | Y | Y |
+## Decisions (pillars)
+- ai-core: exemption for router work (config/UI only, no RAG). Tutiq doc upload stays on ai-core per tutiq/HANDOFF.md.
+- Retrieval: plain pipeline (no agentic/graph) for this scope. Prompt/context: unchanged. Model per step: `registry/models.json` tasks (trivial/chat/reasoning/long-context/code), hub `theme.ai` overrides.
+- Free tier only; paid providers stay disabled unless hub sets freeOnly=false.
 
+## Files to touch
+- `tutiq/lib/theme-loader.ts` — add `ai?: SiteAI` to SiteTheme
+- `tutiq/lib/ai.ts` — order providers via `routeChain(task, theme.ai)`; fallback to old order
+- `hub/app/api/models/route.ts` (new) — GET registry+per-site ai, PUT site ai into `theme_<id>.ai` (reuse themes route write path)
+- `hub/app/models/page.tsx` (new) — search models/tools/plugins, edit per-site chains/disabled/freeOnly, copy install script
+- `hub/app/api/dev-stack/install/route.ts` — extend: install script for a searched tool/plugin (never executed server-side)
 
-## Gaps by check
-- **chatbot** missing (11): aigotitwrong, business-agent, coding-quiz-shorts, daily-agent, growth-agent, idea-factory, leadscout, monetization-agent, nammatamil-crawler, news-spin-agent, ninjapa
-- **feedback** missing (11): aigotitwrong, business-agent, coding-quiz-shorts, daily-agent, growth-agent, idea-factory, leadscout, monetization-agent, nammatamil-crawler, news-spin-agent, ninjapa
-- **analytics** missing (4): aigotitwrong, business-agent, leadscout, nammatamil-crawler
-- **promo** missing (11): aigotitwrong, business-agent, coding-quiz-shorts, daily-agent, leadscout, monetization-agent, nammatamil-crawler, news-spin-agent, ninjapa, prismlane-site, qa-dashboard
-- **theme** missing (5): aigotitwrong, business-agent, leadscout, nammatamil-crawler, prismlane-site
-- **notFound** missing (13): agent-lab, aigotitwrong, business-agent, coding-quiz-shorts, daily-agent, growth-agent, idea-factory, leadscout, monetization-agent, nammatamil-crawler, news-spin-agent, ninjapa, prismlane-site
-- **handoff** missing (3): hub, kwizzo, nammatamil-crawler
+## Steps
+- [x] 1 SiteTheme.ai + routeChain wired in tutiq lib/ai.ts, self-check
+- [x] 2 hub /api/models + /models page (impeccable/frontend-design stack)
+- [x] 3 discover/install search (registry + discover.mjs output) in hub page
+- [x] 4 tutiq trial: chat/learn/exam use router tasks; layout archetype + dials from hub
+- [x] 5 gates: contrast, 375/1280, tsc done; apple-audit/e2e-verify on live = owner-blocked (hub not deployed, no VERCEL_TOKEN)
+- [ ] 6 tutiq/HANDOFF.md remaining items
 
-## Triage 2026-10-09 (manual review of the 11 flagged)
-- **Exempt, internal agent dashboards / static tools (no public users):** business-agent, daily-agent, growth-agent, idea-agent, idea-factory, monetization-agent, news-spin-agent, nammatamil-crawler, leadscout. Chatbot/feedback/promo/404 n/a; no public traffic.
-- **Exempt, Telegram bot + static page:** ninjapa (feedback through the bot; design lock + telemetry done 2026-10-06).
-- **Real gaps (public):** aigotitwrong, coding-quiz-shorts: static `public/index.html`, need chatbot + feedback + 404 + analytics (owner decision: are they live products?).
-- **Fixed 2026-10-09:** prismlane-site `app/not-found.tsx` added (uncommitted). prismlane-site is dark (#0b0e13 + teal) by design; hub theme wiring still open.
-- **Still open:** hub, kwizzo, nammatamil-crawler lack HANDOFF.md; agent-lab, qa-dashboard 404/promo.
+## Success criteria
+- Changing `theme_tutiq.ai.chains.chat` in hub changes the provider order with no deploy (read back from the route).
+- `ai-route.ts` self-check passes; tsc clean on touched files.
 
-## 2026-10-09 design-record sweep
-- ai-jobs-portal, invoicemint, mi-pack: design pass + animated scope already recorded. ai-jobs-portal still TODO: impeccable critique, /review-animations.
-- kwizzo: HANDOFF.md added (design lock + animated scope).
-- nammatamil-crawler: internal dashboard, design N/A, noted in DESIGN.md.
-- aigotitwrong, coding-quiz-shorts: have prod-gate-2026-10-07 records (earlier 'real gap' call was wrong).
+## Evidence (step 5)
+- Hub /models contrast-gate (new `--cookie` flag): 375 PASS, 1280 PASS (fixed FAB + Save indigo-500 -> 600). Screenshots read; mobile site list cut to 26vh so controls sit above the fold.
+- Hub tsc exit 0. API now degrades to registry-only when Edge Config token is bad (403 seen locally) instead of blank page.
+- Animated scope for /models: none by design (Operate-mode admin tool; press feedback only via existing button states; reduced-motion n/a).
+- NOT verified: live Edge Config write/read (needs VERCEL_TOKEN), apple-audit score, hub layout archetype push.
 
-- 2026-10-09: ANIMATED SCOPE records added to 13 projects lacking one (kwizzo, trackwealth, agenttrace, ninjapa, news-spin-agent, site-watchdog, coding-quiz-shorts, daily-agent, growth-agent, idea-factory, monetization-agent, aigotitwrong, business-agent). Scan: 71 registered, `autoaudit` has no dir. `/review-animations` not run on any (owner TODO).
+## 3-tier status (tutiq, 2026-10-10)
+- Server-side verified locally: guest cap 5/day (signed `tq_guest` cookie + IP limit), `guarded('members')` routes 401 for guests, valid promo `TUTIQ-TEST-7D` sets `tq_promo` and unlocks. `/api/access` + `/api/promo` live.
+- Contrast PASS 375+1280 on /, /pricing, /exam, /learn, /about, /contact, /privacy, /terms.
+- NOT verified: `tq_plan` paid path, tier strip on landing/limit prompt/dashboard in browser, live-URL click-test, age-persona runs (9-10, 15-17).
+- Not done by agent (owner-only): commit, push, deploy, delete, spend. Cron `b486e6a6` still active until all steps are done or owner-blocked.
+
+## Modernise deliverables check (2026-10-10)
+- Exist: prompts/modernise.md, components/TierStrip.tsx, ExampleDashboard.tsx, LimitPrompt.tsx, DashboardShell.tsx, ~/.claude/skills/modernise, scripts/check-layouts.ts (PASS: distinct layout per project).
+- Dial CSS vars: `dial` present in globals-template.css.
+
+## Resume from here if interrupted
+Steps 1-6 done or owner-blocked. Persona e2e logged in tutiq/HANDOFF.md. Cron b486e6a6 deleted.
